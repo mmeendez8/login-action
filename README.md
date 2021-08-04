@@ -12,20 +12,21 @@ GitHub Action to login against a Docker registry.
 
 ___
 
-* [Usage](#usage)
-  * [Docker Hub](#docker-hub)
-  * [GitHub Container Registry](#github-container-registry)
-  * [GitLab](#gitlab)
-  * [Azure Container Registry (ACR)](#azure-container-registry-acr)
-  * [Google Container Registry (GCR)](#google-container-registry-gcr)
-  * [Google Artifact Registry (GAR)](#google-artifact-registry-gar)
-  * [AWS Elastic Container Registry (ECR)](#aws-elastic-container-registry-ecr)
-  * [AWS Public Elastic Container Registry (ECR)](#aws-public-elastic-container-registry-ecr)
-  * [OCI Oracle Cloud Infrastructure Registry (OCIR)](#oci-oracle-cloud-infrastructure-registry-ocir)
-  * [Quay.io](#quayio)
-* [Customizing](#customizing)
-  * [inputs](#inputs)
-* [Keep up-to-date with GitHub Dependabot](#keep-up-to-date-with-github-dependabot)
+- [About](#about)
+- [Usage](#usage)
+  - [Docker Hub](#docker-hub)
+  - [GitHub Container Registry](#github-container-registry)
+  - [GitLab](#gitlab)
+  - [Azure Container Registry (ACR)](#azure-container-registry-acr)
+  - [Google Container Registry (GCR)](#google-container-registry-gcr)
+  - [Google Artifact Registry (GAR)](#google-artifact-registry-gar)
+  - [AWS Elastic Container Registry (ECR)](#aws-elastic-container-registry-ecr)
+  - [AWS Public Elastic Container Registry (ECR)](#aws-public-elastic-container-registry-ecr)
+  - [OCI Oracle Cloud Infrastructure Registry (OCIR)](#oci-oracle-cloud-infrastructure-registry-ocir)
+  - [Quay.io](#quayio)
+- [Customizing](#customizing)
+  - [inputs](#inputs)
+- [Keep up-to-date with GitHub Dependabot](#keep-up-to-date-with-github-dependabot)
 
 ## Usage
 
@@ -146,7 +147,7 @@ jobs:
 Use a service account with the ability to push to GCR and [configure access control](https://cloud.google.com/container-registry/docs/access-control).
 Then create and download the JSON key for this service account and save content of `.json` file
 [as a secret](https://docs.github.com/en/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets#creating-encrypted-secrets-for-a-repository)
-called `GCR_JSON_KEY` in your GitHub repo. Ensure you set the username to `_json_key`.
+called `GCR_JSON_KEY` in your GitHub repo. Ensure you set the username to `_json_key`. You can also use the base64 encoding of the JSON file as a secret and set the username field to `_json_key_base64` (more info [here](https://cloud.google.com/artifact-registry/docs/docker/authentication))
 
 ```yaml
 name: ci
